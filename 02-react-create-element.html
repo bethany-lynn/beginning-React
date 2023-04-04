@@ -1,0 +1,34 @@
+<body>
+    <div id="root">
+        <!-- where application is mounted -- a place to append JS generated DOM elements -->
+    </div>
+    <!-- create react elements and render them to the DOM/page with the following scripts -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script type="text/javascript">
+      // create access route to the above div by creating a new variable with document APIs
+      const rootElement = document.getElementById('root')
+      const element = React.createElement('div', {
+        // children: 'Hello World',
+        // could also do: children: ['Hello World ,'Goodbye World'] --- as an array of children props
+        // could also: children: React.createElement('span', null, 'Hello ', 'World'),
+        className: 'container'
+      }, 
+      'Hello World ', 
+      'Goodbye World') // the children this way are an array as props
+      // specify the properties on creation as an object, instead of adding them like below
+      // and instead of textContent, we specify children
+
+      console.log(element)
+
+      ReactDOM.render(element, rootElement) //render the element to the root element
+
+
+      //   // create a new element and give it properties
+    //   const element = document.createElement('div')
+    //   element.textContent = 'Hello World'
+    //   element.className = 'container'
+    //   // append that element onto the root created
+    //   rootElement.appendChild(element)
+    </script>
+</body>
