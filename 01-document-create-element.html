@@ -1,0 +1,13 @@
+<body>
+    <!-- <div id="root">where application is mounted -- a place to append JS generated DOM elements</div> -->
+    <script type="text/javascript">
+      // create access route to the above div by creating a new variable with document APIs
+      const rootElement = document.getElementById('root')
+      // create a new element and give it properties
+      const element = document.createElement('div')
+      element.textContent = 'Hello World'
+      element.className = 'container'
+      // append that element onto the root created
+      rootElement.appendChild(element)
+    </script>
+  </body>
