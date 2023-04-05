@@ -1,0 +1,43 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script> 
+    <script type="text/babel">
+        const rootElement = document.getElementById('root')
+        const className = "container"
+        // anything between {} can be valuated as a JS expression
+        // 1 way:
+        // const element = (
+        //     <div className = {className}>
+        //         <span> Hello </span> <strong> World </strong>
+        //     </div>
+        // )
+        // 2nd way:
+        // const children = "Hello World"
+        // const anotherChild = " Another text"
+        // const element = (
+        //     <div className={className}> 
+        //         {children}
+        //         {anotherChild} 
+        //         </div>
+        // )
+        // 3rd way:
+        // const children="Hello World"
+        // const element = (
+        //     <div className = {className}>
+        //         {children}
+        //     </div>
+        // )
+        // 4th way with self closing DIVs and children inside div
+        // const children="Hello World"
+        // const element = <div className={className} children={children} />
+        // 5th way with props being passed directly:
+        const children="Hello World"
+        const props = {children, className}
+        const element = <div  id="app-root" {...props} className="not-container" />
+        // adding a variable (className) into the div AFTER props will extend from root and OVERRIDE original variable
+        // ... is called spreading
+        ReactDOM.render(element, rootElement)
+    </script>
+</body>
