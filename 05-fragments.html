@@ -1,0 +1,30 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script> 
+    <script type="text/babel">
+    //   const element = <div className="container">Hello World</div>
+
+    // below is how to directly add two elements next to eachother without conlficting arguments because one
+    // of them needs to go first. essentially, creating HTML spans. not best practice, though
+        // const helloElement = React.createElement('span', null, 'Hello')
+        // const worldElement = React.createElement('span', null, 'World')
+        // const element = React.createElement(
+        //     React.Fragment,
+        //     null,
+        //     helloElement,
+        //     ' ',
+        //     worldElement
+        // )
+
+        const element = (
+            <React.Fragment>
+            <span>Hello</span> <span>World</span>
+            </React.Fragment>
+        )
+        // could also use " <> </> " instead of React.Fragment in the carrots
+      ReactDOM.render(element, document.getElementById('root'))
+    </script>
+  </body>
+  
